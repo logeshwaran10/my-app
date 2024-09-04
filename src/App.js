@@ -3,6 +3,7 @@ import React, { useState } from 'react';
   
 //CSS
 import './App.css';
+import './style/style.scss';
 
 //Components
 import Header from './container/Header';
