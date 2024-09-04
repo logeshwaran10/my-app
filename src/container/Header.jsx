@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+
+import Logo from "../Assets/Logo.svg";
 
 const Header = ({ onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,26 +9,46 @@ const Header = ({ onSelect }) => {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navBar = [
-    { key: 'pageOne', path: 'pageOne', title: 'One' },
-    { key: 'pageTwo', path: 'pageTwo', title: 'Two' },
-    { key: 'pageThree', path: 'pageThree', title: 'Three' }
+    { key: "pageOne", path: "pageOne", title: "One" },
+    { key: "pageTwo", path: "pageTwo", title: "Two" },
+    { key: "pageThree", path: "pageThree", title: "Three" },
   ];
 
   return (
     <header className="header">
-        <div>Logo</div>
-      <nav className={`nav ${isOpen ? 'open' : ''}`}>
+      <nav className={"nav"}>
         <div className="nav-toggle" onClick={toggleMenu}>
           ☰
         </div>
-        <ul className="nav-list">
-          {navBar.map(item => (
-            <li key={item.key} className="nav-item" onClick={() => onSelect(item.path)}>
+        <div className="logo">
+          <img src={Logo} />
+        </div>
+        <ul className={`horizontal`}>
+          {navBar.map((item) => (
+            <li
+              key={item.key}
+              className="nav-item"
+              onClick={() => onSelect(item.path)}
+            >
               <NavLink to={`/${item.path}`}>{item.title}</NavLink>
             </li>
           ))}
         </ul>
       </nav>
+
+      <div className={`dropdown ${isOpen ? "open" : ""}`}>
+        <ul className={"veritical"}>
+          {navBar.map((item) => (
+            <li
+              key={item.key}
+              className="nav-item"
+              onClick={() => onSelect(item.path)}
+            >
+              <NavLink to={`/${item.path}`}>{item.title}</NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
     </header>
   );
 };
