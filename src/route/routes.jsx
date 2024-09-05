@@ -1,6 +1,6 @@
-import PageOne from "../container/pageOne";
-import PageTwo from "../container/pageOne";
-import PageThree from "../container/pageOne";
+import PageOne from "../container/PageOne";
+import PageTwo from "../container/PageTwo";
+import PageThree from "../container/PageThree";
 
 const routes = [
     {
