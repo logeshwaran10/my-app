@@ -3,7 +3,7 @@ import React from 'react';
 
 const PageOne = () => {
     return (
-        <div>
+        <div className='constianer d-flex-center'>
             Page one
         </div>
     )
