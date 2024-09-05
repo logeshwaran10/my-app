@@ -1,5 +1,7 @@
+
+//Dependencies
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 //Components
 import Logo from "../Assets/Logo.svg";
