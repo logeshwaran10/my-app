@@ -1,13 +1,7 @@
-import React from 'react';
-
+import React from "react";
 
 const PageThree = () => {
-    return (
-        <div>
-            Page Three
-        </div>
-    )
-}
-
+  return <div className="constianer d-flex-center">Page Three</div>;
+};
 
 export default PageThree;
