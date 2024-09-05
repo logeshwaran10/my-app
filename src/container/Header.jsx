@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
+//Components
 import Logo from "../Assets/Logo.svg";
+import menu from "../Assets/hamburger.svg";
 
-const Header = ({ onSelect }) => {
+const Header = ({ active, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -18,7 +20,7 @@ const Header = ({ onSelect }) => {
     <header className="header">
       <nav className={"nav"}>
         <div className="nav-toggle" onClick={toggleMenu}>
-          ☰
+          <img src={menu} />
         </div>
         <div className="logo">
           <img src={Logo} />
@@ -27,7 +29,7 @@ const Header = ({ onSelect }) => {
           {navBar.map((item) => (
             <li
               key={item.key}
-              className="nav-item"
+              className={"nav-item"}
               onClick={() => onSelect(item.path)}
             >
               <NavLink to={`/${item.path}`}>{item.title}</NavLink>
@@ -41,7 +43,7 @@ const Header = ({ onSelect }) => {
           {navBar.map((item) => (
             <li
               key={item.key}
-              className="nav-item"
+              className={"nav-item"}
               onClick={() => onSelect(item.path)}
             >
               <NavLink to={`/${item.path}`}>{item.title}</NavLink>
